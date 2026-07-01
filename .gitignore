@@ -1,0 +1,10 @@
+venv/
+.idea/
+.DS_Store
+.git_bak/
+*.png
+*.jpg
+*.jpeg
+*.jfif
+organized_cifar10/
+Slike/

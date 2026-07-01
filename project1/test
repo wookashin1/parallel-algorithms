@@ -1,0 +1,15 @@
+shared_mem = [2,3,6,8,10,12,14,16]
+           = []
+           = [32, 40]
+           = [72]
+
+for (int s = (blockDim.x * blockDim.y) / 2; s > 0; s /= 2) {
+        if (thread_id < s) {
+            shared_mem[thread_id] += shared_mem[thread_id + s];
+        }
+        __syncthreads();
+    }
+
+    if (thread_id == 0) {
+        partial_sums[blockIdx.x + blockIdx.y * gridDim.x] = shared_mem[0];
+    }

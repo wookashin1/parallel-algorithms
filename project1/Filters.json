@@ -1,0 +1,5 @@
+{
+  "slika_id" : "1",
+  "filter" : "gaussian_blur",
+  "sigma" : 2
+}
